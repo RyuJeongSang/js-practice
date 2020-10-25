@@ -1,0 +1,12 @@
+body {
+  background-color: seashell;
+}
+
+.form,
+.greetings {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
