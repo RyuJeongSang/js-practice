@@ -1,6 +1,6 @@
-const jsForm = document.querySelector(".js-form"),
+const jsGreetingForm = document.querySelector(".js-form"),
     jsGreeting = document.querySelector(".js-greetings"),
-    inputForm = jsForm.querySelector("input");
+    greetingInput = jsGreetingForm.querySelector("input");
 
 const USER_LS = "currentUser",
     SHOWING_CN = "showing";
@@ -11,18 +11,18 @@ function saveName(text) {
 
 function handleSubmit(event) {
     event.preventDefault();
-    const currentValue = inputForm.value;
+    const currentValue = greetingInput.value;
     paintGreeting(currentValue);
     saveName(currentValue);
 }
 
 function askForName() {
-    jsForm.classList.add(SHOWING_CN);
-    jsForm.addEventListener("submit", handleSubmit);
+    jsGreetingForm.classList.add(SHOWING_CN);
+    jsGreetingForm.addEventListener("submit", handleSubmit);
 }
 
 function paintGreeting(text) {
-    jsForm.classList.remove(SHOWING_CN);
+    jsGreetingForm.classList.remove(SHOWING_CN);
     jsGreeting.classList.add(SHOWING_CN);
     jsGreeting.innerText = `Helle ${text}`;
 }
